@@ -1,0 +1,41 @@
+plugins {
+    id 'groovy'
+//    id 'maven'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    google()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    maven { url "https://maven.google.com" }
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+
+    implementation 'com.android.tools.build:gradle:3.6.0'
+    implementation group: 'org.ow2.asm', name: 'asm', version: '7.1'
+    implementation group: 'org.ow2.asm', name: 'asm-commons', version: '7.1'
+
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            //deploy到maven仓库
+//            // 调用方式就是 'com.thunder.plugin:timeplugin:1.0-SNAPSHOT'
+//            pom.groupId = 'com.helijia.plugin'
+//            pom.version = '1.0-SNAPSHOT'
+//            pom.artifactId = 'scanner'
+//            repository(url: uri('../repo')) //deploy到本地仓库
+//        }
+//    }
+//}
